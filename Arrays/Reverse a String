@@ -1,0 +1,18 @@
+// Complete the function
+// This is just the function
+
+    public static String reverseWord(String str)
+    {
+        
+        //Can use both the methods
+        // String rev = "";
+        // char temp;
+        // for (int i=0; i<str.length(); i++) {
+        //     temp = str.charAt(i);
+        //     rev = temp + rev;
+        // }
+        // return rev;
+        
+        String reversed = new StringBuilder(str).reverse().toString();
+        return reversed;
+    }

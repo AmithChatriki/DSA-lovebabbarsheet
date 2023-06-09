@@ -1,0 +1,30 @@
+public static int doUnion(int a[], int n, int b[], int m) 
+    {
+        //Your code here
+        //Below code is not efficient as it exceeds time limit
+        // ArrayList<Integer> arrList = new ArrayList<Integer>();
+        // for (int temp : a) {
+        //     if (!arrList.contains(temp)) {
+        //         arrList.add(temp);
+        //     }
+        // }
+        // for (int temp : b) {
+        //     if (!arrList.contains(temp)) {
+        //         arrList.add(temp);
+        //     }
+        // }
+        // return arrList.size();
+        
+        //This is an efficient one
+        HashSet<Integer> set = new HashSet<>();
+        
+        for (int i=0; i<n; i++) {
+              set.add(a[i]);
+        }
+        
+        for (int j=0; j<m; j++) {
+              set.add(b[j]);
+        }
+        
+        return set.size();
+    }

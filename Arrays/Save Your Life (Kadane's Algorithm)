@@ -1,0 +1,35 @@
+static String maxSum(String w,char x[],int b[], int n){
+        //code here
+        HashMap<Character,Integer> charMap = new HashMap<>();
+        
+        for(int i=0;i<n;i++){
+            charMap.put(x[i],b[i]);
+        }
+        
+        //Kadane's Alogrithm
+        int curMax = 0;
+        int maxSum = Integer.MIN_VALUE;
+        
+        String curMaxStr = "";
+        String maxStr = "";
+        
+        for(int j=0;j<w.length();j++){
+            if(charMap.containsKey(w.charAt(j))) {
+                curMax = curMax + charMap.get(w.charAt(j));
+            } else {
+                curMax = curMax + (int)w.charAt(j);
+            }
+            
+            curMaxStr += w.charAt(j);
+            
+            if(curMax > maxSum) {
+                maxSum = curMax;
+                maxStr = curMaxStr;
+            }
+            if(curMax < 0){
+                curMaxStr = "";
+                curMax = 0;
+            }
+        }
+        return maxStr;
+    }

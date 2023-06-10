@@ -1,0 +1,44 @@
+public static ArrayList<Integer> duplicates(int arr[], int n) {
+        // code here
+        ArrayList<Integer> a = new ArrayList<Integer>();
+        Arrays.sort(arr);
+        int i=0;
+        while(i<n)
+        {
+            int j=i+1;
+            while(j<n && arr[j]==arr[i])
+                j++;
+            j-=i;
+            if(j>1)
+                a.add(arr[i]);
+            i+=j;
+        }
+        if(a.size()==0)
+            a.add(-1);
+        return a;
+        
+        //Simple aproach but doesn't pass all test cases
+        
+        //ArrayList<Integer> arrList = new ArrayList<Integer>();
+        // int temp = 0;
+        // for (int i=0; i<n; i++) {
+        //     temp++;
+        //     for (int j=0; j<n; j++) {
+        //         if (arr[i]==arr[j]) {
+        //             temp++;
+        //         }
+        //     }
+        //     if(temp>2) {
+        //         if(!arrList.contains(arr[i])) {
+        //             arrList.add(arr[i]);
+        //         }
+        //     }
+        //     temp=0;
+        // }
+        // if (arrList.isEmpty()) {
+        //     arrList.add(-1);
+        // }
+        //Collections.sort(arrList);
+        // return arrList;
+        
+    }
